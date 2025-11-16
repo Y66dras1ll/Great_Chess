@@ -13,17 +13,14 @@ public class MainFrame extends JFrame {
     public MainFrame(Pieces pieces) {
         setTitle("Великие шахматы");
         setBackground(Color.black);
-
-        // Создаем компоненты
+        
         InfoPanel infoPanel = new InfoPanel();
         BoardPanel boardPanel = new BoardPanel(pieces);
         GameController gameController = new GameController(pieces, boardPanel, infoPanel);
 
-        // Устанавливаем связи между компонентами
         boardPanel.setGameController(gameController);
         infoPanel.setGameController(gameController);
 
-        // Компоновка
         Container contents = getContentPane();
         contents.setLayout(new BorderLayout());
         contents.add(boardPanel, BorderLayout.WEST);
