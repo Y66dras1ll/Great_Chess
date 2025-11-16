@@ -2,9 +2,6 @@ package com.chess.engine.logic;
 
 import com.chess.engine.enums.COLOUR;
 import com.chess.engine.enums.ID;
-import com.chess.engine.logic.Boards;
-import com.chess.engine.logic.Coordinate;
-import com.chess.engine.logic.Move;
 import com.chess.engine.pieces.Bishop;
 import com.chess.engine.pieces.King;
 import com.chess.engine.pieces.Pawn;
@@ -460,11 +457,8 @@ public class Pieces {
                     Piece toPromote;
 
                     if (isGUIGame) {
-                        // В GUI режиме продвижение обрабатывается в GUI модуле
-                        // Здесь просто получаем уже установленную фигуру
                         toPromote = pawn.getPromotedPiece();
                         if (toPromote == null) {
-                            // Если не установлено, создаем ферзя по умолчанию
                             toPromote = pawn.promotionQuery(coordinate);
                         }
                     }
